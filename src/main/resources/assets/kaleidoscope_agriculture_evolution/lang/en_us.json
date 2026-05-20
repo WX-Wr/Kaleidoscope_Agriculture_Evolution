@@ -1,0 +1,20 @@
+{
+  "item.kaleidoscope_agriculture_evolution.whip": "Whip",
+  "item.kaleidoscope_agriculture_evolution.plow": "Curved Shaft Plow",
+  "block.kaleidoscope_agriculture_evolution.plow": "Curved Shaft Plow",
+  "entity.kaleidoscope_agriculture_evolution.plow_ox": "Plow Ox",
+  "message.kaleidoscope_agriculture_evolution.edit_enter": "§aEntered edit mode, first point recorded",
+  "message.kaleidoscope_agriculture_evolution.edit_exit": "§cExited edit mode",
+  "message.kaleidoscope_agriculture_evolution.edit_corner": "§eFirst point recorded",
+  "message.kaleidoscope_agriculture_evolution.range_removed": "§cRange removed",
+  "message.kaleidoscope_agriculture_evolution.not_in_range": "§7Not inside any range",
+  "message.kaleidoscope_agriculture_evolution.plow_mode_on": "§aPlow mode: ON",
+  "message.kaleidoscope_agriculture_evolution.plow_mode_off": "§7Plow mode: OFF",
+  "message.kaleidoscope_agriculture_evolution.follow_mode": "§aFollow mode",
+  "message.kaleidoscope_agriculture_evolution.move_to_corner": "§aOx moving to corner",
+  "message.kaleidoscope_agriculture_evolution.select_direction": "§ePlease select plowing direction",
+  "message.kaleidoscope_agriculture_evolution.plow_dir_x_pos": "Plow ox starts plowing in +X direction",
+  "message.kaleidoscope_agriculture_evolution.plow_dir_x_neg": "Plow ox starts plowing in -X direction",
+  "message.kaleidoscope_agriculture_evolution.plow_dir_z_pos": "Plow ox starts plowing in +Z direction",
+  "message.kaleidoscope_agriculture_evolution.plow_dir_z_neg": "Plow ox starts plowing in -Z direction"
+}

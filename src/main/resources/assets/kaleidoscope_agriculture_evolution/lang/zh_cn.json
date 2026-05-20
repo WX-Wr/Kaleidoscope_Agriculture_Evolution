@@ -1,0 +1,20 @@
+{
+  "item.kaleidoscope_agriculture_evolution.whip": "鞭子",
+  "item.kaleidoscope_agriculture_evolution.plow": "曲辕犁",
+  "block.kaleidoscope_agriculture_evolution.plow": "曲辕犁",
+  "entity.kaleidoscope_agriculture_evolution.plow_ox": "耕牛",
+  "message.kaleidoscope_agriculture_evolution.edit_enter": "§a进入编辑模式，已保存第一记录点",
+  "message.kaleidoscope_agriculture_evolution.edit_exit": "§c退出编辑模式",
+  "message.kaleidoscope_agriculture_evolution.edit_corner": "§e已保存第一记录点",
+  "message.kaleidoscope_agriculture_evolution.range_removed": "§c已删除该范围",
+  "message.kaleidoscope_agriculture_evolution.not_in_range": "§7当前位置不在任何范围内",
+  "message.kaleidoscope_agriculture_evolution.plow_mode_on": "§a耕地模式：开启",
+  "message.kaleidoscope_agriculture_evolution.plow_mode_off": "§7耕地模式：关闭",
+  "message.kaleidoscope_agriculture_evolution.follow_mode": "§a跟随模式",
+  "message.kaleidoscope_agriculture_evolution.move_to_corner": "§a牛走向顶角",
+  "message.kaleidoscope_agriculture_evolution.select_direction": "§e请选择犁地方向",
+  "message.kaleidoscope_agriculture_evolution.plow_dir_x_pos": "犁牛开始向 +X 方向犁地",
+  "message.kaleidoscope_agriculture_evolution.plow_dir_x_neg": "犁牛开始向 -X 方向犁地",
+  "message.kaleidoscope_agriculture_evolution.plow_dir_z_pos": "犁牛开始向 +Z 方向犁地",
+  "message.kaleidoscope_agriculture_evolution.plow_dir_z_neg": "犁牛开始向 -Z 方向犁地"
+}
