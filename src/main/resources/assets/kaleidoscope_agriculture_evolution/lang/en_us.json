@@ -5,7 +5,7 @@
   "entity.kaleidoscope_agriculture_evolution.plow_ox": "Plow Ox",
   "message.kaleidoscope_agriculture_evolution.edit_enter": "§aEntered edit mode, first point recorded",
   "message.kaleidoscope_agriculture_evolution.edit_exit": "§cExited edit mode",
-  "message.kaleidoscope_agriculture_evolution.edit_corner": "§eFirst point recorded",
+  "message.kaleidoscope_agriculture_evolution.edit_corner": "§eSecond point recorded",
   "message.kaleidoscope_agriculture_evolution.range_removed": "§cRange removed",
   "message.kaleidoscope_agriculture_evolution.not_in_range": "§7Not inside any range",
   "message.kaleidoscope_agriculture_evolution.plow_mode_on": "§aPlow mode: ON",

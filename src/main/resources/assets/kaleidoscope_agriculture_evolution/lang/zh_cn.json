@@ -5,7 +5,7 @@
   "entity.kaleidoscope_agriculture_evolution.plow_ox": "耕牛",
   "message.kaleidoscope_agriculture_evolution.edit_enter": "§a进入编辑模式，已保存第一记录点",
   "message.kaleidoscope_agriculture_evolution.edit_exit": "§c退出编辑模式",
-  "message.kaleidoscope_agriculture_evolution.edit_corner": "§e已保存第一记录点",
+  "message.kaleidoscope_agriculture_evolution.edit_corner": "§e已保存第二记录点",
   "message.kaleidoscope_agriculture_evolution.range_removed": "§c已删除该范围",
   "message.kaleidoscope_agriculture_evolution.not_in_range": "§7当前位置不在任何范围内",
   "message.kaleidoscope_agriculture_evolution.plow_mode_on": "§a耕地模式：开启",
