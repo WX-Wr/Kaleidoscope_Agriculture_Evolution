@@ -7,6 +7,7 @@
   "message.kaleidoscope_agriculture_evolution.edit_exit": "§cExited edit mode",
   "message.kaleidoscope_agriculture_evolution.edit_corner": "§eSecond point recorded",
   "message.kaleidoscope_agriculture_evolution.range_removed": "§cRange removed",
+  "message.kaleidoscope_agriculture_evolution.range_trimmed": "§eOverlapping area trimmed",
   "message.kaleidoscope_agriculture_evolution.not_in_range": "§7Not inside any range",
   "message.kaleidoscope_agriculture_evolution.plow_mode_on": "§aPlow mode: ON",
   "message.kaleidoscope_agriculture_evolution.plow_mode_off": "§7Plow mode: OFF",

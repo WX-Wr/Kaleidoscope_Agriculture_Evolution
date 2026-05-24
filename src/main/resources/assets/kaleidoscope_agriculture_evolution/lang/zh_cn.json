@@ -7,6 +7,7 @@
   "message.kaleidoscope_agriculture_evolution.edit_exit": "§c退出编辑模式",
   "message.kaleidoscope_agriculture_evolution.edit_corner": "§e已保存第二记录点",
   "message.kaleidoscope_agriculture_evolution.range_removed": "§c已删除该范围",
+  "message.kaleidoscope_agriculture_evolution.range_trimmed": "§e重叠区域已裁剪",
   "message.kaleidoscope_agriculture_evolution.not_in_range": "§7当前位置不在任何范围内",
   "message.kaleidoscope_agriculture_evolution.plow_mode_on": "§a耕地模式：开启",
   "message.kaleidoscope_agriculture_evolution.plow_mode_off": "§7耕地模式：关闭",

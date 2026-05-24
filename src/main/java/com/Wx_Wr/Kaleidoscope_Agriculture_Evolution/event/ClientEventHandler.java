@@ -237,8 +237,8 @@ public class ClientEventHandler {
             if (ox.getOxState() == PlowOxEntity.OxState.PLOWING) {
                 String pathData = ox.getPlowPathData();
                 if (!pathData.isEmpty()) {
-                    List<BlockPos[]> rows = PlowOxEntity.parsePlowPathData(pathData);
-                    PlowPathRenderer.renderPath(poseStack, camera, rows);
+                    List<BlockPos> points = PlowOxEntity.parsePlowPathData(pathData);
+                    PlowPathRenderer.renderPath(poseStack, camera, points);
                 }
             }
         }

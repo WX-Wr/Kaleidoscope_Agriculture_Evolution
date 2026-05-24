@@ -17,7 +17,7 @@ public class ModEntities {
     public static final RegistryObject<EntityType<PlowOxEntity>> PLOW_OX =
             ENTITY_TYPES.register("plow_ox",
                     () -> EntityType.Builder.of(PlowOxEntity::new, MobCategory.CREATURE)
-                            .sized(1.2F, 1.2F)
+                            .sized(0.8F, 1.2F)
                             .clientTrackingRange(64)
                             .updateInterval(2)
                             .build(MODID + ":plow_ox"));
@@ -25,7 +25,7 @@ public class ModEntities {
     public static final RegistryObject<EntityType<PlowEntity>> PLOW_ENTITY =
             ENTITY_TYPES.register("plow_entity",
                     () -> EntityType.Builder.<PlowEntity>of(PlowEntity::new, MobCategory.MISC)
-                            .sized(1.2F, 0.8F)
+                            .sized(0.8F, 0.8F)
                             .clientTrackingRange(64)
                             .updateInterval(2)
                             .build(MODID + ":plow_entity"));

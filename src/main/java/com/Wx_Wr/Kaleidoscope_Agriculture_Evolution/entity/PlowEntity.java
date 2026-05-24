@@ -42,7 +42,15 @@ public class PlowEntity extends AbstractDraggableEntity {
 
     @Override
     protected void onDraggerMove() {
-        BlockPos below = this.blockPosition().below();
+        PlowOxEntity ox = getOx();
+        if (ox == null) return;
+
+        float yawRad = (float) Math.toRadians(ox.getYRot());
+        int dx = (int)(Math.sin(yawRad));
+        int dz = (int)(-Math.cos(yawRad));
+        int yCeil = (int)Math.ceil(this.getY());
+        BlockPos front = new BlockPos(ox.blockPosition().getX() + dx, yCeil, ox.blockPosition().getZ() + dz);
+        BlockPos below = new BlockPos(front.getX(), yCeil - 1, front.getZ());
         BlockState stateBelow = level().getBlockState(below);
 
         // 翻耕泥土
@@ -57,10 +65,9 @@ public class PlowEntity extends AbstractDraggableEntity {
         }
 
         // 破坏路径上的花花草草
-        BlockPos at = this.blockPosition();
-        BlockState stateAt = level().getBlockState(at);
-        if (isBreakablePlant(stateAt)) {
-            level().destroyBlock(at, true);
+        BlockState stateFront = level().getBlockState(front);
+        if (isBreakablePlant(stateFront)) {
+            level().destroyBlock(front, true);
         }
         if (isBreakablePlant(stateBelow)) {
             level().destroyBlock(below, true);
@@ -79,7 +86,7 @@ public class PlowEntity extends AbstractDraggableEntity {
     }
 
     @Override
-    protected double getFollowDistance() { return 2.5; }
+    protected double getFollowDistance() { return 2.0; }
     @Override
     protected double getPullForce() { return 0.3; }
     @Override

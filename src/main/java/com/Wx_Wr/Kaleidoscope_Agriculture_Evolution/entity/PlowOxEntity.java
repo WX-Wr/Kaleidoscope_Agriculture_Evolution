@@ -10,6 +10,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -34,7 +35,7 @@ import java.util.UUID;
 public class PlowOxEntity extends Cow implements GeoAnimatable {
 
     private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
-    private final PlowAI plowAI = new PlowAI(this);
+    private final PlowAI plowAI = new PlowAI(this.level());
     private PlowAI.Direction selectedPlowDir;
 
     // 绳子注册标记
@@ -48,6 +49,7 @@ public class PlowOxEntity extends Cow implements GeoAnimatable {
         MOVE_TO_CORNER,
         SELECT_DIRECTION,
         MOVE_TO_START,
+        START_PLOWING,
         PLOWING,
         FINISHING
     }
@@ -64,6 +66,7 @@ public class PlowOxEntity extends Cow implements GeoAnimatable {
             SynchedEntityData.defineId(PlowOxEntity.class, EntityDataSerializers.OPTIONAL_UUID);
 
     private UUID followOwnerUUID;
+    private int startPlowingTick = 0;
     private int finishingTick = 0;
 
     public PlowOxEntity(EntityType<? extends Cow> type, Level level) {
@@ -264,17 +267,7 @@ public class PlowOxEntity extends Cow implements GeoAnimatable {
         this.selectedPlowDir = dir;
         this.plowAI.start(target, other, dir);
         setOxState(OxState.MOVE_TO_START);
-
-        StringBuilder sb = new StringBuilder();
-        for (BlockPos[] row : plowAI.getAllRows()) {
-            sb.append(row[0].getX()).append(",")
-                    .append(row[0].getY()).append(",")
-                    .append(row[0].getZ()).append(",")
-                    .append(row[1].getX()).append(",")
-                    .append(row[1].getY()).append(",")
-                    .append(row[1].getZ()).append(";");
-        }
-        setPlowPathData(sb.toString());
+        setPlowPathData(plowAI.getPathData());
     }
 
     private void activatePlow() {
@@ -291,21 +284,22 @@ public class PlowOxEntity extends Cow implements GeoAnimatable {
         }
     }
 
-    public static List<BlockPos[]> parsePlowPathData(String data) {
-        List<BlockPos[]> rows = new ArrayList<>();
-        if (data.isEmpty()) return rows;
+    public static List<BlockPos> parsePlowPathData(String data) {
+        List<BlockPos> points = new ArrayList<>();
+        if (data.isEmpty()) return points;
         for (String entry : data.split(";")) {
             if (entry.isEmpty()) continue;
             String[] parts = entry.split(",");
-            if (parts.length != 6) continue;
+            if (parts.length != 3) continue;
             try {
-                rows.add(new BlockPos[]{
-                        new BlockPos(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), Integer.parseInt(parts[2])),
-                        new BlockPos(Integer.parseInt(parts[3]), Integer.parseInt(parts[4]), Integer.parseInt(parts[5]))
-                });
+                points.add(new BlockPos(
+                        Integer.parseInt(parts[0]),
+                        Integer.parseInt(parts[1]),
+                        Integer.parseInt(parts[2])
+                ));
             } catch (NumberFormatException ignored) {}
         }
-        return rows;
+        return points;
     }
 
     // ==================== 主 Tick 逻辑 ====================
@@ -319,12 +313,21 @@ public class PlowOxEntity extends Cow implements GeoAnimatable {
         // 确保犁存在（会自动处理已有犁的查找）
         ensurePlowExists();
 
+        // 只要不在犁地状态，就停掉犁（处理鞭子中途打断等外部状态切换）
+        if (getOxState() != OxState.PLOWING) {
+            PlowEntity plow = getPlowEntity();
+            if (plow != null && plow.isWorking()) {
+                plow.setWorking(false);
+            }
+        }
+
         // 状态机更新
         switch (getOxState()) {
             case FOLLOW -> tickFollow();
             case MOVE_TO_CORNER -> tickMoveToCorner();
             case SELECT_DIRECTION -> tickSelectDirection();
             case MOVE_TO_START -> tickMoveToStart();
+            case START_PLOWING -> tickStartPlowing();
             case PLOWING -> tickPlowing();
             case FINISHING -> tickFinishing();
             default -> {}
@@ -387,17 +390,40 @@ public class PlowOxEntity extends Cow implements GeoAnimatable {
         double targetY = target.getY();
         double targetZ = target.getZ() + 0.5;
 
-        float speed = 0.1f;
-        Vec3 dir = new Vec3(targetX - this.getX(), 0, targetZ - this.getZ()).normalize();
+        Vec3 dir = new Vec3(targetX - this.getX(), targetY - this.getY(), targetZ - this.getZ()).normalize();
+        double speed = 0.1;
 
-        this.setDeltaMovement(dir.x * speed, this.getDeltaMovement().y, dir.z * speed);
+        // Jump assist: when target is higher, give upward velocity to step up
+        if (targetY > this.getY() && this.onGround() && this.horizontalCollision) {
+            this.setDeltaMovement(this.getDeltaMovement().x, 0.42, this.getDeltaMovement().z);
+        } else {
+            this.setDeltaMovement(dir.x * speed, this.getDeltaMovement().y, dir.z * speed);
+        }
 
-        float yaw = (float) Math.toDegrees(Math.atan2(-dir.x, dir.z));
-        this.setYRot(yaw);
-        this.yBodyRot = yaw;
-        this.yHeadRot = yaw;
+        float newYaw = (float) Math.toDegrees(Math.atan2(-dir.x, dir.z));
+        float yawDiff = Mth.wrapDegrees(newYaw - this.getYRot());
+        if (Math.abs(yawDiff) > 2.0f) {
+            this.setYRot(this.getYRot() + yawDiff);
+            this.yBodyRot = this.getYRot();
+            this.yHeadRot = this.getYRot();
+        }
 
         if (this.position().distanceTo(new Vec3(targetX, targetY, targetZ)) < 0.1) {
+            setOxState(OxState.START_PLOWING);
+            startPlowingTick = 0;
+        }
+    }
+
+    private void tickStartPlowing() {
+        this.getNavigation().stop();
+        this.setDeltaMovement(Vec3.ZERO);
+        this.xxa = 0;
+        this.zza = 0;
+        // Increase step height so the ox can walk up full blocks while plowing
+        this.setMaxUpStep(1.0F);
+        startPlowingTick++;
+        // start_plow 动画长度 1.75 秒 = 35 ticks
+        if (startPlowingTick > 35) {
             setOxState(OxState.PLOWING);
             activatePlow();
         }
@@ -418,15 +444,23 @@ public class PlowOxEntity extends Cow implements GeoAnimatable {
         double targetY = target.getY();
         double targetZ = target.getZ() + 0.5;
 
-        float speed = 0.1f;
-        Vec3 dir = new Vec3(targetX - this.getX(), 0, targetZ - this.getZ()).normalize();
+        Vec3 dir = new Vec3(targetX - this.getX(), targetY - this.getY(), targetZ - this.getZ()).normalize();
+        double speed = 0.1;
 
-        this.setDeltaMovement(dir.x * speed, this.getDeltaMovement().y, dir.z * speed);
+        // Jump assist: when target is higher, give upward velocity to step up
+        if (targetY > this.getY() && this.onGround() && this.horizontalCollision) {
+            this.setDeltaMovement(this.getDeltaMovement().x, 0.42, this.getDeltaMovement().z);
+        } else {
+            this.setDeltaMovement(dir.x * speed, this.getDeltaMovement().y, dir.z * speed);
+        }
 
-        float yaw = (float) Math.toDegrees(Math.atan2(-dir.x, dir.z));
-        this.setYRot(yaw);
-        this.yBodyRot = yaw;
-        this.yHeadRot = yaw;
+        float newYaw = (float) Math.toDegrees(Math.atan2(-dir.x, dir.z));
+        float yawDiff = Mth.wrapDegrees(newYaw - this.getYRot());
+        if (Math.abs(yawDiff) > 2.0f) {
+            this.setYRot(this.getYRot() + yawDiff);
+            this.yBodyRot = this.getYRot();
+            this.yHeadRot = this.getYRot();
+        }
 
         if (this.position().distanceTo(new Vec3(targetX, targetY, targetZ)) < 0.1) {
             plowAI.onReachedTarget();
@@ -434,9 +468,12 @@ public class PlowOxEntity extends Cow implements GeoAnimatable {
     }
 
     private void tickFinishing() {
+        this.getNavigation().stop();
         this.setDeltaMovement(Vec3.ZERO);
         this.xxa = 0;
         this.zza = 0;
+        // Restore default step height
+        this.setMaxUpStep(0.6F);
         finishingTick++;
         if (finishingTick > 30) {
             setOxState(OxState.IDLE);
@@ -474,7 +511,12 @@ public class PlowOxEntity extends Cow implements GeoAnimatable {
     private PlayState predicate(AnimationState<PlowOxEntity> state) {
         switch (getOxState()) {
             case PLOWING -> state.getController().setAnimation(RawAnimation.begin().thenLoop("animation.plowox.plowing"));
-            case MOVE_TO_START -> state.getController().setAnimation(RawAnimation.begin().then("animation.plowox.start_plow", Animation.LoopType.HOLD_ON_LAST_FRAME));
+            case START_PLOWING -> state.getController().setAnimation(RawAnimation.begin().then("animation.plowox.start_plow", Animation.LoopType.HOLD_ON_LAST_FRAME));
+            case MOVE_TO_START -> {
+                double speed = getDeltaMovement().horizontalDistance();
+                if (speed > 0.005) state.getController().setAnimation(RawAnimation.begin().thenLoop("animation.plowox.walk"));
+                else state.getController().setAnimation(RawAnimation.begin().thenLoop("animation.plowox.idle"));
+            }
             case FINISHING -> state.getController().setAnimation(RawAnimation.begin().then("animation.plowox.stop_plow", Animation.LoopType.PLAY_ONCE));
             default -> {
                 double speed = getDeltaMovement().horizontalDistance();

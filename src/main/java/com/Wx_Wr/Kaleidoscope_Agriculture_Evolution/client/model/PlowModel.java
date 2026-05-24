@@ -9,7 +9,7 @@ public class PlowModel extends GeoModel<PlowEntity> {
 
     @Override
     public ResourceLocation getModelResource(PlowEntity entity) {
-        return new ResourceLocation(Kaleidoscope_Agriculture_Evolution.MODID, "geo/entity/plow.geo.json");
+        return  new ResourceLocation(Kaleidoscope_Agriculture_Evolution.MODID, "geo/entity/plow.geo.json");
     }
 
     @Override

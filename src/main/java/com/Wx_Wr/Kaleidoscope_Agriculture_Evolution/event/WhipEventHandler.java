@@ -44,18 +44,44 @@ public class WhipEventHandler {
         ListTag ranges = tag.getList("ranges", Tag.TAG_COMPOUND);
         if (ranges.isEmpty()) return;
 
+        // Find the clicked range entry and its group ID
+        int targetGroup = -1;
         for (int i = ranges.size() - 1; i >= 0; i--) {
             CompoundTag range = ranges.getCompound(i);
             BlockPos c1 = BlockPos.of(range.getLong("c1"));
             BlockPos c2 = BlockPos.of(range.getLong("c2"));
             if (isWithinRange(target, c1, c2)) {
-                ranges.remove(i);
-                tag.put("ranges", ranges);
-                player.displayClientMessage(Component.translatable("message.kaleidoscope_agriculture_evolution.range_removed"), true);
-                event.setCanceled(true);
-                return;
+                if (range.contains("group")) {
+                    targetGroup = range.getInt("group");
+                }
+                break;
             }
         }
+
+        if (targetGroup >= 0) {
+            // Delete all pieces that share the same group ID
+            for (int i = ranges.size() - 1; i >= 0; i--) {
+                CompoundTag range = ranges.getCompound(i);
+                if (range.contains("group") && range.getInt("group") == targetGroup) {
+                    ranges.remove(i);
+                }
+            }
+        } else {
+            // Fallback: delete only the clicked entry (backward compat)
+            for (int i = ranges.size() - 1; i >= 0; i--) {
+                CompoundTag range = ranges.getCompound(i);
+                BlockPos c1 = BlockPos.of(range.getLong("c1"));
+                BlockPos c2 = BlockPos.of(range.getLong("c2"));
+                if (isWithinRange(target, c1, c2)) {
+                    ranges.remove(i);
+                    break;
+                }
+            }
+        }
+
+        tag.put("ranges", ranges);
+        player.displayClientMessage(Component.translatable("message.kaleidoscope_agriculture_evolution.range_removed"), true);
+        event.setCanceled(true);
     }
 
     @SubscribeEvent
