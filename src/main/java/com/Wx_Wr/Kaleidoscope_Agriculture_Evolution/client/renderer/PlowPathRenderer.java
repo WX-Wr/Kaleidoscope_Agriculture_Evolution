@@ -3,7 +3,9 @@ package com.Wx_Wr.Kaleidoscope_Agriculture_Evolution.client.renderer;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
 import net.minecraft.client.Camera;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Matrix4f;
@@ -47,5 +49,40 @@ public class PlowPathRenderer {
         RenderSystem.enableDepthTest();
         RenderSystem.enableCull();
         RenderSystem.disableBlend();
+    }
+
+    /**
+     * Debug rendering: draws the sequence number (index) of each path point
+     * floating above the block, billboarded toward the camera.
+     */
+    public static void renderPathIndices(PoseStack poseStack, Camera camera,
+                                          MultiBufferSource.BufferSource bufferSource,
+                                          List<BlockPos> points) {
+        if (points.isEmpty()) return;
+
+        Minecraft mc = Minecraft.getInstance();
+        Vec3 cam = camera.getPosition();
+
+        for (int i = 0; i < points.size(); i++) {
+            BlockPos p = points.get(i);
+            double x = p.getX() + 0.5 - cam.x;
+            double y = p.getY() + 1.35 - cam.y; // float above the block surface
+            double z = p.getZ() + 0.5 - cam.z;
+
+            poseStack.pushPose();
+            poseStack.translate(x, y, z);
+            poseStack.mulPose(camera.rotation());
+            poseStack.scale(-0.025F, -0.025F, 0.025F);
+
+            Matrix4f matrix4f = poseStack.last().pose();
+            String text = String.valueOf(i);
+            float halfWidth = mc.font.width(text) / 2.0f;
+
+            // Yellow text, see-through (no depth test), full-bright
+            mc.font.drawInBatch(text, -halfWidth, 0, 0xFFFFFF00, false, matrix4f,
+                    bufferSource, net.minecraft.client.gui.Font.DisplayMode.SEE_THROUGH, 0, 15728880);
+
+            poseStack.popPose();
+        }
     }
 }

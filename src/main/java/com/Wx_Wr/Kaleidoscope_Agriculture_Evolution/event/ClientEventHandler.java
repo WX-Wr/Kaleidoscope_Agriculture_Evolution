@@ -234,11 +234,16 @@ public class ClientEventHandler {
                 renderDirectionArrows(ox, poseStack, camera);
             }
 
-            if (ox.getOxState() == PlowOxEntity.OxState.PLOWING) {
+            if (ox.getOxState() == PlowOxEntity.OxState.PLOWING
+                    && player.getMainHandItem().getItem() instanceof WhipItem) {
                 String pathData = ox.getPlowPathData();
                 if (!pathData.isEmpty()) {
                     List<BlockPos> points = PlowOxEntity.parsePlowPathData(pathData);
                     PlowPathRenderer.renderPath(poseStack, camera, points);
+                    // Debug: render sequence numbers above each path point
+                    if (bufferSource instanceof MultiBufferSource.BufferSource bs) {
+                        PlowPathRenderer.renderPathIndices(poseStack, camera, bs, points);
+                    }
                 }
             }
         }

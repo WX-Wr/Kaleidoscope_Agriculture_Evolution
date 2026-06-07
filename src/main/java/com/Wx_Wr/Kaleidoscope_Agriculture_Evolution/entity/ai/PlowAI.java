@@ -12,7 +12,7 @@ import java.util.*;
  * 1. S-shaped scan to number all plowable blocks sequentially
  * 2. Connect numbered blocks in order using 2D A* (8-dir within layer)
  * 3. Mark all processed blocks as obstacles for future layers
- * 4. Connect layers using 3D A* (26-dir)
+ * 4. Connect layers using 3D A* (6-dir)
  */
 public class PlowAI {
 
@@ -228,8 +228,6 @@ public class PlowAI {
         List<BlockPos> numbered = sScanLayer(y);
         if (numbered.isEmpty()) return;
 
-        currentLayerRows.clear();
-
         // Record the first block as this layer's start
         BlockPos layerStart = numbered.get(0);
 
@@ -243,17 +241,21 @@ public class PlowAI {
                 if (link3D != null) {
                     path.addAll(link3D.subList(1, link3D.size()));
                 }
-                // Rotate numbered so bestEntry is first, preserving all blocks
+                // Split numbered into two segments and reverse the prefix,
+                // so the transition from S-end to the next segment is as short
+                // as possible instead of jumping across the entire field.
                 int idx = numbered.indexOf(bestEntry);
                 if (idx > 0) {
-                    List<BlockPos> rotated = new ArrayList<>();
+                    List<BlockPos> reordered = new ArrayList<>();
+                    // Forward segment: [bestEntry, bestEntry+1, ..., end]
                     for (int i = idx; i < numbered.size(); i++) {
-                        rotated.add(numbered.get(i));
+                        reordered.add(numbered.get(i));
                     }
-                    for (int i = 0; i < idx; i++) {
-                        rotated.add(numbered.get(i));
+                    // Reversed prefix: [bestEntry-1, bestEntry-2, ..., 0]
+                    for (int i = idx - 1; i >= 0; i--) {
+                        reordered.add(numbered.get(i));
                     }
-                    numbered = rotated;
+                    numbered = reordered;
                 }
             }
         }

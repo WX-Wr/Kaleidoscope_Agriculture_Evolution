@@ -241,7 +241,6 @@ public class AStarPathfinder {
                         if (nx < minX || nx > maxX || ny < minY || ny > maxY || nz < minZ || nz > maxZ) continue;
                         BlockPos neighbor = new BlockPos(nx, ny, nz);
                         if (closed.contains(neighbor)) continue;
-                        if (obstacles.contains(neighbor)) continue;
                         if (PlowableChecker.isObstacle(level, neighbor, obstacles)) continue;
 
                         int stepCost = 1 + turnPenalty(cameFrom, cur, neighbor);
