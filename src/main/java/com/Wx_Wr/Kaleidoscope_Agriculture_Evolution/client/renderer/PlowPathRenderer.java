@@ -52,37 +52,31 @@ public class PlowPathRenderer {
     }
 
     /**
-     * Debug rendering: draws the sequence number (index) of each path point
-     * floating above the block, billboarded toward the camera.
+     * Renders the remaining path block count as text floating above the ox.
      */
-    public static void renderPathIndices(PoseStack poseStack, Camera camera,
-                                          MultiBufferSource.BufferSource bufferSource,
-                                          List<BlockPos> points) {
-        if (points.isEmpty()) return;
-
+    public static void renderRemainingCount(PoseStack poseStack, Camera camera,
+                                            MultiBufferSource.BufferSource bufferSource,
+                                            net.minecraft.world.entity.Entity ox,
+                                            int remainingCount) {
         Minecraft mc = Minecraft.getInstance();
         Vec3 cam = camera.getPosition();
 
-        for (int i = 0; i < points.size(); i++) {
-            BlockPos p = points.get(i);
-            double x = p.getX() + 0.5 - cam.x;
-            double y = p.getY() + 1.35 - cam.y; // float above the block surface
-            double z = p.getZ() + 0.5 - cam.z;
+        double x = ox.getX() - cam.x;
+        double y = ox.getY() + ox.getBbHeight() + 0.6 - cam.y; // above the ox's head
+        double z = ox.getZ() - cam.z;
 
-            poseStack.pushPose();
-            poseStack.translate(x, y, z);
-            poseStack.mulPose(camera.rotation());
-            poseStack.scale(-0.025F, -0.025F, 0.025F);
+        poseStack.pushPose();
+        poseStack.translate(x, y, z);
+        poseStack.mulPose(camera.rotation());
+        poseStack.scale(-0.025F, -0.025F, 0.025F);
 
-            Matrix4f matrix4f = poseStack.last().pose();
-            String text = String.valueOf(i);
-            float halfWidth = mc.font.width(text) / 2.0f;
+        Matrix4f matrix4f = poseStack.last().pose();
+        String text = "剩余: " + remainingCount;
+        float halfWidth = mc.font.width(text) / 2.0f;
 
-            // Yellow text, see-through (no depth test), full-bright
-            mc.font.drawInBatch(text, -halfWidth, 0, 0xFFFFFF00, false, matrix4f,
-                    bufferSource, net.minecraft.client.gui.Font.DisplayMode.SEE_THROUGH, 0, 15728880);
+        mc.font.drawInBatch(text, -halfWidth, 0, 0xFFFFFF00, false, matrix4f,
+                bufferSource, net.minecraft.client.gui.Font.DisplayMode.SEE_THROUGH, 0, 15728880);
 
-            poseStack.popPose();
-        }
+        poseStack.popPose();
     }
 }

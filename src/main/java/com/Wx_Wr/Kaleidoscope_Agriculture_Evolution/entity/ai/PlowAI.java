@@ -95,14 +95,12 @@ public class PlowAI {
     }
 
     /**
-     * Returns remaining path as a string for client sync (limited to avoid overflow).
+     * Returns remaining path as a string for client sync.
      * Format: "x,y,z;x,y,z;..."
      */
     public String getPathData() {
-        int maxSync = 300;
         StringBuilder sb = new StringBuilder();
-        int end = Math.min(path.size(), pathIndex + maxSync);
-        for (int i = pathIndex; i < end; i++) {
+        for (int i = pathIndex; i < path.size(); i++) {
             BlockPos p = path.get(i);
             sb.append(p.getX()).append(",").append(p.getY()).append(",").append(p.getZ()).append(";");
         }

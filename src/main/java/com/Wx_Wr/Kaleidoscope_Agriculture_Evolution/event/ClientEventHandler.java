@@ -240,9 +240,9 @@ public class ClientEventHandler {
                 if (!pathData.isEmpty()) {
                     List<BlockPos> points = PlowOxEntity.parsePlowPathData(pathData);
                     PlowPathRenderer.renderPath(poseStack, camera, points);
-                    // Debug: render sequence numbers above each path point
+                    // Render remaining block count above the ox
                     if (bufferSource instanceof MultiBufferSource.BufferSource bs) {
-                        PlowPathRenderer.renderPathIndices(poseStack, camera, bs, points);
+                        PlowPathRenderer.renderRemainingCount(poseStack, camera, bs, ox, points.size());
                     }
                 }
             }

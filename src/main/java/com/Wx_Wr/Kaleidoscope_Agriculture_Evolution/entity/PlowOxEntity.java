@@ -68,6 +68,7 @@ public class PlowOxEntity extends Cow implements GeoAnimatable {
     private UUID followOwnerUUID;
     private int startPlowingTick = 0;
     private int finishingTick = 0;
+    private int pathSyncTimer = 0;
 
     public PlowOxEntity(EntityType<? extends Cow> type, Level level) {
         super(type, level);
@@ -464,6 +465,13 @@ public class PlowOxEntity extends Cow implements GeoAnimatable {
 
         if (this.position().distanceTo(new Vec3(targetX, targetY, targetZ)) < 0.1) {
             plowAI.onReachedTarget();
+        }
+
+        // Sync remaining path to client every 20 ticks (1 second)
+        pathSyncTimer++;
+        if (pathSyncTimer >= 20) {
+            pathSyncTimer = 0;
+            setPlowPathData(plowAI.getPathData());
         }
     }
 
