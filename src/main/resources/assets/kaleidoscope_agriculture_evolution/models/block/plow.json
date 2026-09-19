@@ -3,12 +3,12 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "kaleidoscope_agriculture_evolution:block/plow",
-		"particle": "kaleidoscope_agriculture_evolution:block/plow"
+		"0": "kaleidoscope_agriculture_evolution:block/farm_tools/plow",
+		"particle": "kaleidoscope_agriculture_evolution:block/farm_tools/plow"
 	},
 	"elements": [
 		{
-			"name": "",
+			"name": "plow",
 			"from": [4, 4.6, 22.8],
 			"to": [12, 5.6, 24.8],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
@@ -22,7 +22,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [6.6, 0, -2],
 			"to": [9.4, 1, 10.5],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
@@ -36,7 +36,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [5.9, -0.1, 9.85],
 			"to": [10, 1.1, 13.95],
 			"rotation": {"angle": -45, "axis": "y", "origin": [8, 0.5, 11.95]},
@@ -50,7 +50,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [6.4, 1.1, 10.35],
 			"to": [8.4, 5.2, 12.35],
 			"rotation": {"angle": -45, "axis": "y", "origin": [8, 0.5, 11.95]},
@@ -64,7 +64,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [7.4, 3.8, 5.4],
 			"to": [8.6, 5, 10.5],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
@@ -78,7 +78,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [7.6, 4.4, 23.4],
 			"to": [8.4, 7.5, 24.2],
 			"rotation": {"angle": -45, "axis": "y", "origin": [8, 5.1, 23.8]},
@@ -92,7 +92,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [6.6, 6.2, 22.4],
 			"to": [9.4, 6.8, 25.2],
 			"rotation": {"angle": -45, "axis": "y", "origin": [8, 5.1, 23.8]},
@@ -106,7 +106,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [7.01, 5.51, 16.01],
 			"to": [8.99, 6.49, 24.79],
 			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 6, 22.95]},
@@ -120,7 +120,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [7.01, 12.26709, 9.29804],
 			"to": [8.99, 13.24709, 13.37804],
 			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 12.75709, 11.53804]},
@@ -134,7 +134,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [7, 13.08006, 5.55065],
 			"to": [9, 14.08006, 9.65065],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
@@ -148,7 +148,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [7.01, 12.42016, 1.79282],
 			"to": [8.99, 13.40016, 5.87282],
 			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 12.91016, 4.03282]},
@@ -162,7 +162,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [7, 10.34936, -5.84185],
 			"to": [9, 11.34936, 2.65815],
 			"rotation": {"angle": -45, "axis": "x", "origin": [8, 10.84936, 0.80815]},
@@ -176,7 +176,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [7.2, 1.84936, -4.94185],
 			"to": [8.8, 24.34936, -3.34185],
 			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 10.84936, 0.80815]},
@@ -190,7 +190,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [7.2, 1.84936, 2.15815],
 			"to": [8.8, 17.94936, 3.75815],
 			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 10.84936, 7.90815]},
@@ -204,7 +204,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [7.1, 14.84936, -0.44185],
 			"to": [8.9, 16.84936, 6.35815],
 			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 10.84936, 7.90815]},
@@ -218,7 +218,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [1.6, 20.21551, -8],
 			"to": [14.4, 21.21551, -7],
 			"rotation": {"angle": -45, "axis": "x", "origin": [8, 20.71551, -8.73994]},
@@ -232,7 +232,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [7, 11.16253, 12.87998],
 			"to": [9, 12.16253, 17.97998],
 			"rotation": {"angle": 45, "axis": "x", "origin": [8, 11.66253, 13.57998]},
@@ -246,7 +246,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [-2.95403, 4.6, 21.03882],
 			"to": [5.14597, 5.6, 23.03882],
 			"rotation": {"angle": -22.5, "axis": "y", "origin": [0.14597, 3.6, 21.03882]},
@@ -260,7 +260,7 @@
 			}
 		},
 		{
-			"name": "",
+			"name": "plow",
 			"from": [11.1509, 4.6, 22.53129],
 			"to": [19.2509, 5.6, 24.53129],
 			"rotation": {"angle": 22.5, "axis": "y", "origin": [12.2509, 3.6, 22.53129]},
@@ -274,31 +274,31 @@
 			}
 		},
 		{
-			"name": "8",
+			"name": "knot",
 			"from": [-1.95403, 4.3, 20.63882],
-			"to": [0.04597, 5.9, 23.43882],
+			"to": [1.04597, 5.9, 23.43882],
 			"rotation": {"angle": -22.5, "axis": "y", "origin": [0.14597, 3.6, 21.03882]},
 			"faces": {
-				"north": {"uv": [6.25, 7.75, 6.75, 8.25], "texture": "#0"},
-				"east": {"uv": [7, 0.25, 7.75, 0.75], "texture": "#0"},
-				"south": {"uv": [7.75, 6.5, 8.25, 7], "texture": "#0"},
-				"west": {"uv": [7, 0.75, 7.75, 1.25], "texture": "#0"},
-				"up": {"uv": [2, 6.5, 1.5, 5.75], "texture": "#0"},
-				"down": {"uv": [7.5, 1.25, 7, 2], "texture": "#0"}
+				"north": {"uv": [4, 11.25, 5.5, 13.25], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [4, 9.75, 5.5, 11.25], "texture": "#0"},
+				"south": {"uv": [2.5, 11.25, 4, 13.25], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [2.5, 9.75, 4, 11.25], "texture": "#0"},
+				"up": {"uv": [2.5, 13.25, 1, 11.25], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [5.5, 13.25, 7, 11.25], "rotation": 90, "texture": "#0"}
 			}
 		},
 		{
-			"name": "8",
-			"from": [16.2509, 4.3, 22.13129],
+			"name": "knot",
+			"from": [15.2509, 4.3, 22.13129],
 			"to": [18.2509, 5.9, 24.93129],
 			"rotation": {"angle": 22.5, "axis": "y", "origin": [12.2509, 3.6, 22.53129]},
 			"faces": {
-				"north": {"uv": [6.75, 7.75, 7.25, 8.25], "texture": "#0"},
-				"east": {"uv": [7, 6.5, 7.75, 7], "texture": "#0"},
-				"south": {"uv": [7.75, 7, 8.25, 7.5], "texture": "#0"},
-				"west": {"uv": [7, 7, 7.75, 7.5], "texture": "#0"},
-				"up": {"uv": [5.5, 7.75, 5, 7], "texture": "#0"},
-				"down": {"uv": [2.5, 7.25, 2, 8], "texture": "#0"}
+				"north": {"uv": [4, 11.25, 5.5, 13.25], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [4, 9.75, 5.5, 11.25], "texture": "#0"},
+				"south": {"uv": [2.5, 11.25, 4, 13.25], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [2.5, 9.75, 4, 11.25], "texture": "#0"},
+				"up": {"uv": [2.5, 13.25, 1, 11.25], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [5.5, 13.25, 7, 11.25], "rotation": 90, "texture": "#0"}
 			}
 		}
 	],
@@ -317,14 +317,14 @@
 			"color": 0,
 			"children": [
 				{
-					"name": "",
+					"name": "plow",
 					"origin": [7.65547, 11.07561, 5.31827],
 					"scope": 0,
 					"color": 1,
 					"children": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 				},
 				{
-					"name": "8",
+					"name": "knot",
 					"origin": [8, 5.025, 21.675],
 					"scope": 0,
 					"color": 2,

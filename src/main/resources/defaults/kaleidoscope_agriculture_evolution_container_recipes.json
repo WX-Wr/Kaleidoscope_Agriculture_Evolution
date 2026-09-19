@@ -1,0 +1,354 @@
+{
+  "crock": {
+    "recipes": [
+      {
+        "raw": [
+          "kaleidoscope_agriculture_evolution:cucumber"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:pickled_cucumber",
+        "output_count": 1,
+        "liquid": "vinegar",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_salt",
+        "portion_count": 1,
+        "duration_seconds": 120
+      },
+      {
+        "raw": [
+          "kaleidoscope_cookery:red_chili",
+          "kaleidoscope_cookery:green_chili"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:pickled_pepper",
+        "output_count": 1,
+        "liquid": "vinegar",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_salt",
+        "portion_count": 1,
+        "duration_seconds": 90
+      },
+      {
+        "raw": [
+          "kaleidoscope_agriculture_evolution:jiaotou"
+        ],
+        "extra_raw": [
+          "kaleidoscope_cookery:red_chili",
+          "kaleidoscope_cookery:green_chili"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:pickled_jiaotou",
+        "output_count": 1,
+        "liquid": "vinegar",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_salt",
+        "portion_count": 1,
+        "duration_seconds": 120
+      },
+      {
+        "raw": [
+          "minecraft:carrot"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:honey_glazed_carrot",
+        "output_count": 1,
+        "liquid": "honey",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_sugar",
+        "portion_count": 1,
+        "duration_seconds": 180
+      },
+      {
+        "raw": [
+          "minecraft:pumpkin",
+          "farmersdelight:pumpkin_slice"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:honey_glazed_pumpkin_slice",
+        "output_count": 1,
+        "liquid": "honey",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_sugar",
+        "portion_count": 1,
+        "duration_seconds": 210
+      },
+      {
+        "raw": [
+          "kaleidoscope_cookery:tomato",
+          "farmersdelight:tomato"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:honey_glazed_tomato",
+        "output_count": 1,
+        "liquid": "empty",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_sugar",
+        "portion_count": 1,
+        "duration_seconds": 120
+      },
+      {
+        "raw": [
+          "minecraft:bamboo"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:pickled_bamboo_shoot",
+        "output_count": 1,
+        "liquid": "water",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_salt",
+        "portion_count": 1,
+        "duration_seconds": 120
+      },
+      {
+        "raw": [
+          "farmersdelight:onion"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:pickled_onion",
+        "output_count": 1,
+        "liquid": "vinegar",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_salt",
+        "portion_count": 1,
+        "duration_seconds": 90
+      },
+      {
+        "raw": [
+          "minecraft:bamboo"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:sour_bamboo",
+        "output_count": 1,
+        "liquid": "vinegar",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_salt",
+        "portion_count": 1,
+        "duration_seconds": 120
+      },
+      {
+        "raw": [
+          "kaleidoscope_cookery:lettuce",
+          "farmersdelight:cabbage"
+        ],
+        "extra_raw": [
+          "kaleidoscope_cookery:red_chili",
+          "kaleidoscope_cookery:green_chili"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:spicy_cabbage",
+        "output_count": 1,
+        "liquid": "vinegar",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_salt",
+        "portion_count": 1,
+        "duration_seconds": 300
+      },
+      {
+        "raw": [
+          "minecraft:cod"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:pickled_cod",
+        "output_count": 1,
+        "liquid": "empty",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_salt",
+        "portion_count": 1,
+        "duration_seconds": 600
+      },
+      {
+        "raw": [
+          "minecraft:salmon"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:pickled_salmon",
+        "output_count": 1,
+        "liquid": "empty",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_salt",
+        "portion_count": 1,
+        "duration_seconds": 600
+      },
+      {
+        "raw": [
+          "minecraft:beef"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:salted_beef",
+        "output_count": 1,
+        "liquid": "empty",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_salt",
+        "portion_count": 1,
+        "duration_seconds": 600
+      },
+      {
+        "raw": [
+          "minecraft:mutton"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:salted_mutton",
+        "output_count": 1,
+        "liquid": "empty",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_salt",
+        "portion_count": 1,
+        "duration_seconds": 600
+      },
+      {
+        "raw": [
+          "minecraft:porkchop"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:salted_pork",
+        "output_count": 1,
+        "liquid": "empty",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_salt",
+        "portion_count": 1,
+        "duration_seconds": 600
+      },
+      {
+        "raw": [
+          "minecraft:rabbit"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:salted_rabbit",
+        "output_count": 1,
+        "liquid": "empty",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_salt",
+        "portion_count": 1,
+        "duration_seconds": 600
+      },
+      {
+        "raw": [
+          "minecraft:chicken"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:salted_chicken",
+        "output_count": 1,
+        "liquid": "empty",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_salt",
+        "portion_count": 1,
+        "duration_seconds": 600
+      },
+      {
+        "raw": [
+          "minecraft:egg",
+          "minecraft:sniffer_egg"
+        ],
+        "extra_raw": [
+          "minecraft:coal"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:century_egg",
+        "output_count": 1,
+        "liquid": "water",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_salt",
+        "portion_count": 1,
+        "duration_seconds": 900
+      },
+      {
+        "raw": [
+          "minecraft:wheat"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:vinegar",
+        "output_count": 9,
+        "liquid": "water",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_yeast",
+        "portion_count": 1,
+        "duration_seconds": 900
+      },
+      {
+        "raw": [
+          "minecraft:wheat"
+        ],
+        "output": "kaleidoscope_agriculture_evolution:vinegar",
+        "output_count": 9,
+        "liquid": "water",
+        "portion_item": "kaleidoscope_agriculture_evolution:portion_yeast_powder",
+        "portion_count": 1,
+        "duration_seconds": 900
+      }
+    ]
+  },
+  "glass_fermentation": {
+    "recipes": [
+      {
+        "id": "apple_vinegar",
+        "input_content": "water",
+        "min_fill_level": 3,
+        "max_fill_level": 3,
+        "ingredients": [
+          {
+            "items": [
+              "minecraft:apple"
+            ],
+            "count": 2,
+            "type": "item"
+          },
+          {
+            "items": [
+              "kaleidoscope_agriculture_evolution:portion_sugar"
+            ],
+            "count": 2,
+            "type": "portion"
+          }
+        ],
+        "output": "kaleidoscope_agriculture_evolution:portion_apple_vinegar",
+        "output_count": 1,
+        "duration_seconds": 900,
+        "drain_liquid": false,
+        "result_content": "apple_vinegar",
+        "result_fill_level": 3
+      },
+      {
+        "id": "honey_glazed_carrot",
+        "input_content": "honey",
+        "min_fill_level": 1,
+        "max_fill_level": 3,
+        "ingredients": [
+          {
+            "items": [
+              "minecraft:carrot"
+            ],
+            "count": 1,
+            "type": "item"
+          },
+          {
+            "items": [
+              "kaleidoscope_agriculture_evolution:portion_sugar"
+            ],
+            "count": 1,
+            "type": "portion"
+          }
+        ],
+        "output": "kaleidoscope_agriculture_evolution:honey_glazed_carrot",
+        "output_count": 1,
+        "duration_seconds": 180,
+        "drain_liquid": true
+      },
+      {
+        "id": "honey_glazed_pumpkin",
+        "input_content": "honey",
+        "min_fill_level": 1,
+        "max_fill_level": 3,
+        "ingredients": [
+          {
+            "items": [
+              "minecraft:pumpkin",
+              "farmersdelight:pumpkin_slice"
+            ],
+            "count": 1,
+            "type": "item"
+          },
+          {
+            "items": [
+              "kaleidoscope_agriculture_evolution:portion_sugar"
+            ],
+            "count": 1,
+            "type": "portion"
+          }
+        ],
+        "output": "kaleidoscope_agriculture_evolution:honey_glazed_pumpkin_slice",
+        "output_count": 1,
+        "duration_seconds": 210,
+        "drain_liquid": true
+      },
+      {
+        "id": "sugared_tomato",
+        "input_content": "empty",
+        "min_fill_level": 0,
+        "max_fill_level": 0,
+        "ingredients": [
+          {
+            "items": [
+              "kaleidoscope_cookery:tomato",
+              "farmersdelight:tomato"
+            ],
+            "count": 1,
+            "type": "item"
+          },
+          {
+            "items": [
+              "kaleidoscope_agriculture_evolution:portion_sugar"
+            ],
+            "count": 1,
+            "type": "portion"
+          }
+        ],
+        "output": "kaleidoscope_agriculture_evolution:honey_glazed_tomato",
+        "output_count": 1,
+        "duration_seconds": 120,
+        "drain_liquid": false
+      }
+    ]
+  }
+}

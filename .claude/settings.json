@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -rn \"/\\\\*\\\\*\\\\|/\\\\* \" src/main/java --include=\"*.java\")",
+      "Bash(grep -rn \"/\\\\*\\\\*\" src/main/java --include=\"*.java\")",
+      "Bash(grep -rnP \"^\\\\s*\\(//|\\\\*|/\\\\*|/\\\\*\\\\*\\).*[A-Za-z]\" src/main/java --include=\"*.java\")"
+    ]
+  }
+}

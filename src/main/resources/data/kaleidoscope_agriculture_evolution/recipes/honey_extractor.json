@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "decorations",
+  "pattern": [
+    " I ",
+    "PHP",
+    "PPP"
+  ],
+  "key": {
+    "H": {
+      "item": "minecraft:bee_nest"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "P": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "kaleidoscope_agriculture_evolution:honey_extractor"
+  }
+}

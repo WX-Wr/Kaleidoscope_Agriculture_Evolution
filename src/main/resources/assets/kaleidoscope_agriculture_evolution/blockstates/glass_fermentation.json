@@ -1,0 +1,555 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/glass_fermentation"
+      }
+    },
+    {
+      "when": {
+        "tap": "close",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/close_tap"
+      }
+    },
+    {
+      "when": {
+        "tap": "close",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/close_tap",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "tap": "close",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/close_tap",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "tap": "close",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/close_tap",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "tap": "open",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/open_tap"
+      }
+    },
+    {
+      "when": {
+        "tap": "open",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/open_tap",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "tap": "open",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/open_tap",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "tap": "open",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/open_tap",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "bottle": "empty_close",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_empty"
+      }
+    },
+    {
+      "when": {
+        "bottle": "empty_close",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_empty",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "bottle": "empty_close",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_empty",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "bottle": "empty_close",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_empty",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "bottle": "empty_open",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_empty"
+      }
+    },
+    {
+      "when": {
+        "bottle": "empty_open",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_empty",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "bottle": "empty_open",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_empty",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "bottle": "empty_open",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_empty",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "bottle": "water_close",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_water"
+      }
+    },
+    {
+      "when": {
+        "bottle": "water_close",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_water",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "bottle": "water_close",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_water",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "bottle": "water_close",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_water",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "bottle": "water_open",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_water"
+      }
+    },
+    {
+      "when": {
+        "bottle": "water_open",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_water",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "bottle": "water_open",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_water",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "bottle": "water_open",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_water",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "bottle": "vinegar_close",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_vinegar"
+      }
+    },
+    {
+      "when": {
+        "bottle": "vinegar_close",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_vinegar",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "bottle": "vinegar_close",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_vinegar",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "bottle": "vinegar_close",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_vinegar",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "bottle": "vinegar_open",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_vinegar"
+      }
+    },
+    {
+      "when": {
+        "bottle": "vinegar_open",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_vinegar",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "bottle": "vinegar_open",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_vinegar",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "bottle": "vinegar_open",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_vinegar",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "bottle": "honey_close",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_honey"
+      }
+    },
+    {
+      "when": {
+        "bottle": "honey_close",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_honey",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "bottle": "honey_close",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_honey",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "bottle": "honey_close",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_honey",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "bottle": "honey_open",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_honey"
+      }
+    },
+    {
+      "when": {
+        "bottle": "honey_open",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_honey",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "bottle": "honey_open",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_honey",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "bottle": "honey_open",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_honey",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "bottle": "yeast_solution_close",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_yeast_solution"
+      }
+    },
+    {
+      "when": {
+        "bottle": "yeast_solution_close",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_yeast_solution",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "bottle": "yeast_solution_close",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_yeast_solution",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "bottle": "yeast_solution_close",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_yeast_solution",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "bottle": "yeast_solution_open",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_yeast_solution"
+      }
+    },
+    {
+      "when": {
+        "bottle": "yeast_solution_open",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_yeast_solution",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "bottle": "yeast_solution_open",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_yeast_solution",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "bottle": "yeast_solution_open",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_yeast_solution",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "bottle": "apple_vinegar_close",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_apple_vinegar"
+      }
+    },
+    {
+      "when": {
+        "bottle": "apple_vinegar_close",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_apple_vinegar",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "bottle": "apple_vinegar_close",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_apple_vinegar",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "bottle": "apple_vinegar_close",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_close_apple_vinegar",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "bottle": "apple_vinegar_open",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_apple_vinegar"
+      }
+    },
+    {
+      "when": {
+        "bottle": "apple_vinegar_open",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_apple_vinegar",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "bottle": "apple_vinegar_open",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_apple_vinegar",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "bottle": "apple_vinegar_open",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open_apple_vinegar",
+        "y": 270
+      }
+    }
+  ]
+}

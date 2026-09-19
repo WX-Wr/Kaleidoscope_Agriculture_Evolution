@@ -1,0 +1,83 @@
+{
+  "id": "kaleidoscope_agriculture_evolution:temperate_bee",
+  "chromosomes": [
+    {
+      "index": 0,
+      "name": "lineage",
+      "loci": [
+        {"id": "species_marker", "map_position": 0.0, "type": "quantitative", "mutation_rate": 0.002},
+        {"id": "bloodline_stability", "map_position": 35.0, "type": "quantitative", "mutation_rate": 0.003}
+      ]
+    },
+    {
+      "index": 1,
+      "name": "production",
+      "loci": [
+        {"id": "honey_yield", "map_position": 0.0, "type": "quantitative", "mutation_rate": 0.005},
+        {"id": "beeswax_yield", "map_position": 32.0, "type": "quantitative", "mutation_rate": 0.005}
+      ]
+    },
+    {
+      "index": 2,
+      "name": "survival",
+      "loci": [
+        {"id": "lifespan", "map_position": 0.0, "type": "quantitative", "mutation_rate": 0.004},
+        {"id": "disease_resistance", "map_position": 35.0, "type": "quantitative", "mutation_rate": 0.004}
+      ]
+    },
+    {
+      "index": 3,
+      "name": "pollination",
+      "loci": [
+        {"id": "pollination_efficiency", "map_position": 0.0, "type": "quantitative", "mutation_rate": 0.005},
+        {"id": "flower_affinity", "map_position": 38.0, "type": "quantitative", "mutation_rate": 0.005}
+      ]
+    },
+    {
+      "index": 4,
+      "name": "environment",
+      "loci": [
+        {"id": "precipitation_tolerance", "map_position": 0.0, "type": "quantitative", "mutation_rate": 0.004},
+        {"id": "nocturnal_activity", "map_position": 40.0, "type": "quantitative", "mutation_rate": 0.004}
+      ]
+    },
+    {
+      "index": 5,
+      "name": "behavior",
+      "loci": [
+        {"id": "aggression", "map_position": 0.0, "type": "quantitative", "mutation_rate": 0.003},
+        {"id": "colony_activity", "map_position": 28.0, "type": "quantitative", "mutation_rate": 0.004}
+      ]
+    },
+    {
+      "index": 6,
+      "name": "strain_stability",
+      "loci": [
+        {"id": "homozygosity_bias", "map_position": 0.0, "type": "quantitative", "mutation_rate": 0.003},
+        {"id": "mutation_tolerance", "map_position": 35.0, "type": "quantitative", "mutation_rate": 0.003}
+      ]
+    },
+    {
+      "index": 7,
+      "name": "specialty",
+      "loci": [
+        {"id": "special_product_chance", "map_position": 0.0, "type": "quantitative", "mutation_rate": 0.006},
+        {"id": "rare_drop_bias", "map_position": 42.0, "type": "quantitative", "mutation_rate": 0.006}
+      ]
+    }
+  ],
+  "product_table": {
+    "minecraft:honey_bottle": 1.0,
+    "kaleidoscope_agriculture_evolution:beeswax": 1.0
+  },
+  "biome_tags": [
+    "minecraft:is_forest",
+    "minecraft:is_plains"
+  ],
+  "flower_tags": [
+    "minecraft:flowers",
+    "minecraft:small_flowers"
+  ],
+  "mutation_bias": 1.0,
+  "base_colony_size": 5
+}

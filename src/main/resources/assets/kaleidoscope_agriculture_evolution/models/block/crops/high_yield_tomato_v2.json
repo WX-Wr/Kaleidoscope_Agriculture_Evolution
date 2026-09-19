@@ -1,0 +1,7 @@
+{
+  "parent": "kaleidoscope_cookery:block/cross",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "cross": "kaleidoscope_agriculture_evolution:block/high_yield_crops/high_yield_tomato_v2"
+  }
+}

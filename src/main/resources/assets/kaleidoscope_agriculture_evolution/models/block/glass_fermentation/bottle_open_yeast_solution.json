@@ -1,0 +1,7 @@
+{
+  "parent": "kaleidoscope_agriculture_evolution:block/glass_fermentation/bottle_open",
+  "textures": {
+    "missing": "kaleidoscope_agriculture_evolution:block/farm_tools/yeast_solution_bottle",
+    "particle": "kaleidoscope_agriculture_evolution:block/farm_tools/yeast_solution_bottle"
+  }
+}

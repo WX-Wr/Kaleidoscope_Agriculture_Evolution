@@ -1,0 +1,34 @@
+{
+  "seed_groups": {
+    "paddy_seeds": [
+      {
+        "item": "farmersdelight:rice",
+        "crop": "farmersdelight:rice",
+        "water_crop": true,
+        "required": false
+      },
+      {
+        "item": "kaleidoscope_cookery:rice",
+        "crop": "kaleidoscope_cookery:rice_crop",
+        "water_crop": true,
+        "required": false
+      },
+      {
+        "item": "kaleidoscope_cookery:wild_rice",
+        "crop": "kaleidoscope_cookery:rice_crop",
+        "water_crop": true,
+        "required": false
+      }
+    ],
+    "dry_seeds": {
+      "include_bush_block_seeds": true,
+      "exclude": [
+        "farmersdelight:rice",
+        "kaleidoscope_cookery:rice",
+        "kaleidoscope_cookery:wild_rice",
+        "minecraft:melon_seeds",
+        "minecraft:pumpkin_seeds"
+      ]
+    }
+  }
+}

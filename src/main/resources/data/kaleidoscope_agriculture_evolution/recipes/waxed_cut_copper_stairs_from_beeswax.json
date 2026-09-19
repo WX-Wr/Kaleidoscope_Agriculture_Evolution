@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:cut_copper_stairs"
+    },
+    {
+      "item": "kaleidoscope_agriculture_evolution:beeswax"
+    }
+  ],
+  "result": {
+    "item": "minecraft:waxed_cut_copper_stairs"
+  }
+}

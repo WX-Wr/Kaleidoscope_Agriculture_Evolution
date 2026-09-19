@@ -1,0 +1,68 @@
+{
+  "sources": [
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:block/farm_tools/water"
+    },
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:block/farm_tools/vinegar"
+    },
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:block/farm_tools/honey"
+    },
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:block/farm_tools/yeast_solution"
+    },
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:block/farm_tools/rice"
+    },
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:block/farm_tools/transparent_layer"
+    },
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:block/farm_tools/atop_water"
+    },
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:block/farm_tools/atop_salt1"
+    },
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:block/farm_tools/atop_salt2"
+    },
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:block/farm_tools/atop_salt3"
+    },
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:block/farm_tools/atop_salt4"
+    },
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:gui/accomplished/accomplished"
+    },
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:gui/error/error"
+    },
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:gui/warn/warn"
+    },
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:gui/arrow/xarrow"
+    },
+    {
+      "type": "single",
+      "resource": "kaleidoscope_agriculture_evolution:gui/arrow/zarrow"
+    }
+  ]
+}

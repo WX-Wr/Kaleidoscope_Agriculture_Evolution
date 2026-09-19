@@ -1,5 +1,8 @@
 {
   "variants": {
-    "": { "model": "kaleidoscope_agriculture_evolution:block/plow" }
+    "facing=north": { "model": "kaleidoscope_agriculture_evolution:block/plow" },
+    "facing=east":  { "model": "kaleidoscope_agriculture_evolution:block/plow", "y": 90 },
+    "facing=south": { "model": "kaleidoscope_agriculture_evolution:block/plow", "y": 180 },
+    "facing=west":  { "model": "kaleidoscope_agriculture_evolution:block/plow", "y": 270 }
   }
 }

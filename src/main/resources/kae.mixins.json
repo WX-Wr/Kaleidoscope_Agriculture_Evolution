@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "com.wxwr.kaleidoscopeagricultureevolution.genetics.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "kae.mixins.refmap.json",
+  "mixins": [
+    "BeehiveBlockMixin",
+    "BeehiveBlockEntityAccessor",
+    "BeehiveBlockEntityMixin",
+    "ItemStackWaxLayerMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

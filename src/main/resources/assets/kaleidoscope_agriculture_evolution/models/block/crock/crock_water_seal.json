@@ -1,0 +1,48 @@
+{
+  "format_version": "1.9.0",
+  "credit": "Made with Blockbench",
+  "render_type": "minecraft:translucent",
+  "texture_size": [32, 32],
+  "textures": {
+    "water": "kaleidoscope_agriculture_evolution:block/farm_tools/crock_water",
+    "particle": "kaleidoscope_agriculture_evolution:block/farm_tools/crock_water"
+  },
+  "elements": [
+    {
+      "name": "water_seal",
+      "from": [3.5, 14, 3.5],
+      "to": [12.45, 14, 12.5],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [7.9, 14, 8]
+      },
+      "faces": {
+        "north": {
+          "uv": [7, 10.5, 3.5, 7],
+          "texture": "#water"
+        },
+        "east": {
+          "uv": [7, 10.5, 3.5, 7],
+          "texture": "#water"
+        },
+        "south": {
+          "uv": [7, 10.5, 3.5, 7],
+          "texture": "#water"
+        },
+        "west": {
+          "uv": [7, 10.5, 3.5, 7],
+          "texture": "#water"
+        },
+        "up": {
+          "uv": [7, 7, 3.5, 3.5],
+          "texture": "#water"
+        },
+        "down": {
+          "uv": [7, 3.5, 3.5, 0],
+          "texture": "#water"
+        }
+      }
+    }
+  ]
+}

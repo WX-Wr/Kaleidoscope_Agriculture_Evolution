@@ -57,16 +57,56 @@ minecraft {
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
+mixin {
+    add sourceSets.main, "kae.mixins.refmap.json"
+    config "kae.mixins.json"
+}
+
 repositories {
+    mavenCentral()
     maven {
         name = 'GeckoLib'
         url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+    }
+    maven {
+        name = 'CurseMaven'
+        url 'https://cursemaven.com'
     }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.20.1:4.8.3')
+    implementation fg.deobf("curse.maven:farmers-delight-398521:8083474")
+    implementation fg.deobf("curse.maven:kaleidoscope-tavern-1475175:8350841")
+    implementation fg.deobf("curse.maven:kaleidoscope-cookery-1309203:8266769")
+    implementation fg.deobf("curse.maven:jei-238222:8526990")
+    implementation fg.deobf("curse.maven:jade-324717:8479276")
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.3'
+}
+
+def asciiTestRuntimeDir = file("${System.getProperty('java.io.tmpdir')}/kae-test-runtime")
+
+tasks.register('prepareAsciiTestRuntime', Sync) {
+    into asciiTestRuntimeDir
+    from(sourceSets.main.output.classesDirs) { into 'main-classes' }
+    from(sourceSets.main.output.resourcesDir) { into 'main-resources' }
+    from(sourceSets.test.output.classesDirs) { into 'test-classes' }
+}
+
+tasks.named('test', Test).configure {
+    useJUnitPlatform()
+    dependsOn tasks.named('prepareAsciiTestRuntime')
+
+    def asciiMainClasses = file("${asciiTestRuntimeDir}/main-classes")
+    def asciiMainResources = file("${asciiTestRuntimeDir}/main-resources")
+    def asciiTestClasses = file("${asciiTestRuntimeDir}/test-classes")
+    def externalRuntimeClasspath = sourceSets.test.runtimeClasspath.filter {
+        !it.absolutePath.startsWith(project.buildDir.absolutePath)
+    }
+
+    testClassesDirs = files(asciiTestClasses)
+    classpath = files(asciiTestClasses, asciiMainClasses, asciiMainResources) + externalRuntimeClasspath
 }
 
 tasks.named('processResources', ProcessResources).configure {
@@ -113,4 +153,5 @@ publishing {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+    options.compilerArgs += ["-Xlint:-removal"]
 }

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "kaleidoscope_agriculture_evolution:block/louche" },
+    "facing=east":  { "model": "kaleidoscope_agriculture_evolution:block/louche", "y": 90 },
+    "facing=south": { "model": "kaleidoscope_agriculture_evolution:block/louche", "y": 180 },
+    "facing=west":  { "model": "kaleidoscope_agriculture_evolution:block/louche", "y": 270 }
+  }
+}

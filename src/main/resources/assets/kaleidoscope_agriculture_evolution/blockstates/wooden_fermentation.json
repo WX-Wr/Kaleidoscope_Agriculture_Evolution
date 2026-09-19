@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lidded=true": {
+      "model": "kaleidoscope_agriculture_evolution:block/wooden_fermentation/wooden_fermentation"
+    },
+    "lidded=false": {
+      "model": "kaleidoscope_agriculture_evolution:block/wooden_fermentation/wooden_fermentation_without_lib"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "crock": {
+    "raw": [
+      "kaleidoscope_agriculture_evolution:cucumber",
+      "kaleidoscope_agriculture_evolution:jiaotou",
+      "minecraft:wheat",
+      "minecraft:carrot",
+      "minecraft:bamboo",
+      "minecraft:cod",
+      "minecraft:salmon",
+      "minecraft:beef",
+      "minecraft:mutton",
+      "minecraft:porkchop",
+      "minecraft:rabbit",
+      "minecraft:chicken",
+      "minecraft:egg",
+      "minecraft:sniffer_egg",
+      "minecraft:coal",
+      "minecraft:pumpkin",
+      "farmersdelight:pumpkin_slice",
+      "farmersdelight:onion",
+      "farmersdelight:tomato",
+      "farmersdelight:cabbage",
+      "kaleidoscope_cookery:tomato",
+      "kaleidoscope_cookery:lettuce",
+      "kaleidoscope_cookery:red_chili",
+      "kaleidoscope_cookery:green_chili"
+    ],
+    "non_raw": [
+      "kaleidoscope_agriculture_evolution:portion_sugar",
+      "kaleidoscope_agriculture_evolution:portion_salt",
+      "kaleidoscope_agriculture_evolution:portion_yeast",
+      "kaleidoscope_agriculture_evolution:portion_yeast_powder"
+    ]
+  },
+  "glass_fermentation": {
+    "apple_vinegar": [
+      "minecraft:apple",
+      "kaleidoscope_agriculture_evolution:portion_sugar"
+    ],
+    "preserving": [
+      "kaleidoscope_agriculture_evolution:portion_sugar",
+      "minecraft:carrot",
+      "minecraft:pumpkin",
+      "farmersdelight:pumpkin_slice",
+      "kaleidoscope_cookery:tomato",
+      "farmersdelight:tomato"
+    ]
+  }
+}

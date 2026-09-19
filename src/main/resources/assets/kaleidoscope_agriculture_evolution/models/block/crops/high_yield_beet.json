@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "kaleidoscope_agriculture_evolution:block/high_yield_crops/high_yield_beet"
+  }
+}

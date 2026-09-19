@@ -1,0 +1,125 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "lidded": "false",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/crock/crock_without_lib"
+      }
+    },
+    {
+      "when": {
+        "lidded": "false",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/crock/crock_without_lib",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "lidded": "false",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/crock/crock_without_lib",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "lidded": "false",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/crock/crock_without_lib",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "lidded": "true",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/crock/crock"
+      }
+    },
+    {
+      "when": {
+        "lidded": "true",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/crock/crock",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "lidded": "true",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/crock/crock",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "lidded": "true",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/crock/crock",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "lidded": "true",
+        "water_sealed": "true",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/crock/crock_water_seal"
+      }
+    },
+    {
+      "when": {
+        "lidded": "true",
+        "water_sealed": "true",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/crock/crock_water_seal",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "lidded": "true",
+        "water_sealed": "true",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/crock/crock_water_seal",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "lidded": "true",
+        "water_sealed": "true",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "kaleidoscope_agriculture_evolution:block/crock/crock_water_seal",
+        "y": 270
+      }
+    }
+  ]
+}

@@ -5,7 +5,14 @@ pluginManagement {
             name = 'MinecraftForge'
             url = 'https://maven.minecraftforge.net/'
         }
-        maven { url = 'https://maven.parchmentmc.org' } // Add this line
+        maven {
+            name = 'ParchmentMC'
+            url = 'https://maven.parchmentmc.org'
+        }
+        maven {
+            name = 'LDTTeam'
+            url = 'https://ldtteam.jfrog.io/artifactory/parchmentmc-libs-release/'
+        }
     }
 }
 

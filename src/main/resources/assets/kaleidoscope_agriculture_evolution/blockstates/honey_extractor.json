@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "kaleidoscope_agriculture_evolution:block/honey_extractor/honey_extractor",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "kaleidoscope_agriculture_evolution:block/honey_extractor/honey_extractor",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "kaleidoscope_agriculture_evolution:block/honey_extractor/honey_extractor",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "kaleidoscope_agriculture_evolution:block/honey_extractor/honey_extractor",
+      "y": 90
+    }
+  }
+}

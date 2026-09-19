@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "minecraft:item/handheld",
 	"textures": {
-		"layer0": "kaleidoscope_agriculture_evolution:item/whip"
+		"layer0": "kaleidoscope_agriculture_evolution:item/farm_tools/whip"
 	},
 	"display": {
 		"thirdperson_righthand": {
